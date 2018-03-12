@@ -1,0 +1,14 @@
+<!--index.wxml-->
+<swiper indicator-dots="{{indicatorDots}}"  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">  
+  <block wx:for="{{imgUrls}}">  
+    <swiper-item class="banner">  
+        <image src="{{item}}" mode="widthFix" />  
+    </swiper-item>  
+  </block>  
+</swiper> 
+
+<view class="container">
+  <ul>
+    <li></li>
+  </ul>
+</view>

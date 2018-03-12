@@ -1,0 +1,40 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/id/id",
+    "pages/bill/bill",
+    "pages/repay/repay"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#373737",
+    "navigationBarTitleText": "她帮分期",
+    "navigationBarTextStyle":"#fff"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "images/nav/homeDefault.png",
+      "selectedIconPath": "images/nav/home.png"
+    },
+    {
+      "pagePath": "pages/id/id",
+      "text": "实名认证",
+      "iconPath": "images/nav/idDefault.png",
+      "selectedIconPath": "images/nav/id.png"
+    },
+    {
+      "pagePath": "pages/bill/bill",
+      "text": "申请分期",
+      "iconPath": "images/nav/billDefault.png",
+      "selectedIconPath": "images/nav/bill.png"
+    },
+    {
+      "pagePath": "pages/repay/repay",
+      "text": "账单还款",
+      "iconPath": "images/nav/repayDefault.png",
+      "selectedIconPath": "images/nav/repay.png"
+    }]
+  }
+}
