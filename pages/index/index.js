@@ -1,7 +1,5 @@
 //index.js
 //获取应用实例
-const app = getApp()
-
 Page({
   data: {
     bannersrc:"/images/banner/banner1.jpg",
@@ -14,7 +12,12 @@ Page({
     circular: true, // 是否采用衔接滑动
     current: 0, // 当前所在页面的 index
     interval: 1500, // 自动切换时间间隔
-    duration: 1000 // 滑动动画时长
+    duration: 1000, // 滑动动画时长
+    menuIcon:[
+      {img:"/images/index/link1.png",text:"支持百家机构"},
+      {img:"/images/index/link2.png",text:"1小时闪电到账"},
+      {img:"/images/index/link3.png",text:"阶梯还款计划"}
+    ]
   },
   changeIndicatorDots: function (e) {
     this.setData({
