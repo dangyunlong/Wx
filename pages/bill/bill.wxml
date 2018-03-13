@@ -1,2 +1,26 @@
 <!--pages/bill/bill.wxml-->
-<text>pages/bill/bill.wxml</text>
+<view class="statebox">
+  <view><image src="{{stateimg}}"></image></view>
+  <view>恭喜审核通过</view>
+</view>
+<view class="statetxt">
+  <view class="topbox">
+    <view class="money">200,000.00</view>
+    <view class="text">最高授信额度（元）</view>
+  </view>
+  <view class="linebox">
+    <label>借款金额：</label><input maxlength="10" placeholder="请输入借款金额" class="txtinput" type="number" />
+  </view>
+  <view class="linebox">
+    <label>分期数</label>
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+      <view class="picker">
+        当前选择：{{array[index]}}
+      </view>
+    </picker>
+  </view>
+  <view class="linebox2">
+    <view class="">实际到账金额（元）：</view>
+    <view class="">实际到账金额（元）：</view>
+  </view>
+</view>

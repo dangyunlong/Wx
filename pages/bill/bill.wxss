@@ -1,1 +1,75 @@
 /* pages/bill/bill.wxss */
+page {
+  background: #f2f2f2;
+}
+.statebox {
+  height: 240rpx;
+  text-align: center;
+  padding-top:50rpx;
+  background: #fff;
+  margin-bottom:20rpx
+}
+.statebox image {
+  width: 122rpx;
+  height: 122rpx;
+  margin-bottom: 20rpx;
+}
+.statetxt {
+  height: 530rpx;
+  background: #fff;
+  font-size: 30rpx;
+  color: #333333;
+}
+.money {
+  font-size:56rpx;
+  color: #ff93ba;
+  text-align: center;
+  margin-bottom: 20rpx;
+}
+.text {
+  font-size: 24rpx;
+  color: #999999;
+  text-align: center;
+}
+.topbox {
+  padding-top: 38rpx;
+  padding-bottom:38rpx;
+  border-bottom:1px solid #eeeeee;
+}
+.linebox{
+  color:#333333;
+  font-size: 26rpx;
+  height: 80rpx;
+  border-bottom:1px solid #eeeeee;
+  line-height: 80rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+}
+.linebox2 {
+  color:#333333;
+  font-size: 26rpx;
+  height: 160rpx;
+  border-bottom:1px solid #eeeeee;
+  line-height: 80rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  margin-bottom: 20rpx;
+}
+.linebox label {
+  display: inline-block;
+  height: 80rpx;
+  vertical-align:middle;
+}
+.txtinput {
+  display: inline-block;
+  height: 80rpx;
+  vertical-align:middle;
+  float:right;
+  text-align:right;
+}
+.linebox picker {
+  display: inline-block;
+  height: 80rpx;
+  vertical-align:middle;
+  float:right;
+}

@@ -1,66 +1,21 @@
-// pages/bill/bill.js
+var app = getApp()
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
+    stateimg:"/images/state/true.png",
+    listdata: [
+      { allmoney: "2,000.00", time: "2017-12-12 13:14", img: "/images/state/state1.png", money: "2,000.00", mmoney:"1,000.00",num:"12"},
+      { allmoney: "3,000.00", time: "2017-12-11 10:00", img: "/images/state/state2.png", money: "1,800.00", mmoney: "900.00", num: "6" },
+      { allmoney: "1,500.00", time: "2017-12-10 09:33", img: "/images/state/state3.png", money: "1,400.00", mmoney: "1,100.00", num: "12" },
+      { allmoney: "3,300.00", time: "2017-12-09 13:40", img: "/images/state/state1.png", money: "900.00", mmoney: "900.00", num: "3" },
+      { allmoney: "990.00", time: "2017-11-30 06:40", img: "/images/state/state2.png", money: "100.00", mmoney: "300.00", num: "6" },
+    ],
+    array: ['美国', '中国', '巴西', '日本'],
+    bindPickerChange: function (e) {
+      this.setData({
+        index: e.detail.value
+      })
+    },
   }
-})
+
+})  

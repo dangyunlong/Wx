@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <swiper indicator-dots="{{indicatorDots}}"  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">  
-  <block wx:for="{{imgUrls}}" style="width:100%">  
+  <block wx:for="{{imgUrls}}" style="width:100%" wx:key="imgUrls">  
     <swiper-item class="banner">  
         <image src="{{item}}" style="width:100%;height:100%"/>  
     </swiper-item>  
@@ -8,7 +8,7 @@
 </swiper> 
 
 <view class="menubox">
-  <block wx:for="{{menuIcon}}">  
+  <block wx:for="{{menuIcon}}" wx:key="menuIcon">  
      <view class="iconbox"><image src="{{item.img}}" style="width:43px; height:47.5px"></image>{{item.text}}</view>
   </block>   
 </view>
