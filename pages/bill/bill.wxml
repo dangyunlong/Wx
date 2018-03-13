@@ -13,6 +13,11 @@
   </view>
   <view class="linebox">
     <label>分期数</label>
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{qi}}">
+      <view class="picker">
+        {{qi[index]}}
+      </view>
+    </picker>
   </view>
   <view class="linebox2">
     <view class="">实际到账金额（元）：</view>
