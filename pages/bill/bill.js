@@ -10,8 +10,9 @@ Page({
       { allmoney: "3,300.00", time: "2017-12-09 13:40", img: "/images/state/state1.png", money: "900.00", mmoney: "900.00", num: "3" },
       { allmoney: "990.00", time: "2017-11-30 06:40", img: "/images/state/state2.png", money: "100.00", mmoney: "300.00", num: "6" },
     ],
-    array: ['美国', '中国', '巴西', '日本'],
+    qi: ["3期","6期","12期","24期","32期"],
     bindPickerChange: function (e) {
+      console.log('picker发送选择改变，携带值为', e.detail.value)
       this.setData({
         index: e.detail.value
       })
