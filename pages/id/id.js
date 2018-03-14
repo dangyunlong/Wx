@@ -1,6 +1,7 @@
 var app = getApp();
 Page({
   data: {
+    img:"/images/photo/plus.png",
     imgData:[],//上传获得的是一组图片 array
   },
   addimg:function(){

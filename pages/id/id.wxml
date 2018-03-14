@@ -4,15 +4,12 @@
   <view class="idline">拍摄时请保持身份证边框完整、字迹清晰、亮度均衡</view>
 </view>
 <view class="upimgbox">
-  <view>上传身份证</view>
-  <image class="weui-uploader__img" src="{{image}}" data-src="{{image}}" bindtap="addimg"></image>
+  <view class="imgtitle">上传身份证</view>
+  <view class="add" bindtap="addimg"><image src="{{img}}"></image></view>
   <block wx:for="{{imgData}}" wx:for-item="image" wx:key="image">
     <view class="weui-uploader__file">
       <image class="weui-uploader__img" src="{{image}}" data-src="{{image}}" bindtap="addimg"></image>
     </view>
   </block>
-
-
-  
- 
+   
 </view>
