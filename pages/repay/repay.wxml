@@ -8,8 +8,8 @@
 <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight -53}}px" bindchange="bindChange">  
     <!-- 全部 -->  
     <swiper-item> 
-      <scroll-view scroll-y style="height:100%" > 
-        <block wx:for="{{listdata}}" wx:key="listdata">
+      <scroll-view scroll-y style="height:100%" bindscrolltolower="add"> 
+        <block wx:for="{{listdata}}" wx:key="listdata" wx:if="{{index<listnum}}">
           <view class="listbox">
             <view class="listtop">
               <view class="listtitle">申请{{item.allmoney}}</view>
@@ -30,8 +30,9 @@
                 <view class="lbtxt">分期数</view>
               </view>
             </view>
-          </view>  
+          </view>
         </block>
+        <view class="over" wx:if="{{this.data.listnum == this.data.listmax}}">—— 别扯了，到底了——</view>  
       </scroll-view>
     </swiper-item>  
     <!-- 待放款 -->  

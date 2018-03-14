@@ -1,4 +1,18 @@
 <!--id.wxml-->
-<view class="container">
-  <button bindtap="getAjax">ajax</button>
+<view class="idtitle">
+  <view class="idline">填写真实身份信息有助于您快速通过审核</view>
+  <view class="idline">拍摄时请保持身份证边框完整、字迹清晰、亮度均衡</view>
+</view>
+<view class="upimgbox">
+  <view>上传身份证</view>
+  <image class="weui-uploader__img" src="{{image}}" data-src="{{image}}" bindtap="addimg"></image>
+  <block wx:for="{{imgData}}" wx:for-item="image" wx:key="image">
+    <view class="weui-uploader__file">
+      <image class="weui-uploader__img" src="{{image}}" data-src="{{image}}" bindtap="addimg"></image>
+    </view>
+  </block>
+
+
+  
+ 
 </view>

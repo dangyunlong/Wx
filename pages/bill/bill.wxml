@@ -9,18 +9,19 @@
     <view class="text">最高授信额度（元）</view>
   </view>
   <view class="linebox">
-    <label>借款金额：</label><input maxlength="10" placeholder="请输入借款金额" class="txtinput" type="number" />
+    <label>借款金额：</label><input maxlength="10" placeholder="请输入借款金额" class="txtinput" type="number" bindinput="gomoney" value="{{je}}"/>
   </view>
   <view class="linebox">
     <label>分期数</label>
     <picker bindchange="bindPickerChange" value="{{index}}" range="{{qi}}">
       <view class="picker">
-        {{qi[index]}}
+        {{qi[index]}}期
       </view>
     </picker>
   </view>
   <view class="linebox2">
-    <view class="">实际到账金额（元）：</view>
-    <view class="">实际到账金额（元）：</view>
+    <view class="clear"><label class="leftlabel">实际到账金额（元）：</label>{{factmoney}}</view>
+    <view class="clear"><label class="leftlabel">每期还款金额（元）：</label>{{repayment}}</view>
   </view>
 </view>
+<button class="btn" bindtap="enter">确认项目</button>

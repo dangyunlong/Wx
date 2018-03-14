@@ -54,6 +54,14 @@ page {
   margin-left: 30rpx;
   margin-right: 30rpx;
   margin-bottom: 20rpx;
+  text-align: right
+}
+.clear {
+  clear: both;
+  overflow: hidden;
+}
+.leftlabel {
+  float: left;
 }
 .linebox label {
   display: inline-block;
@@ -72,4 +80,12 @@ page {
   height: 80rpx;
   vertical-align:middle;
   float:right;
+}
+button.btn {
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  margin-top: 38rpx;
+  background: #ff93ba;
+  font-size: 30rpx;
+  color: #fff;
 }
