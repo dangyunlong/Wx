@@ -1,6 +1,6 @@
+//引用ajax
+var http = require("../../utils/http.js");
 //index.js
-//获取公用js
-var tools = require("../../utils/util.js");
 var app = getApp();
 Page({
   data: {
@@ -57,18 +57,13 @@ Page({
       datanum:num
     })
   },
-  onLoad() {
-    var that=this;
-    //tools.cs(); //外部引用的方法只能在onload的时候才能执行
-    tools.byajax("",function(res){
+  onLoad:function(){
+    http.getReq("serv/index.php", function (res) {
+      //console.log("banner==")
       console.log(res)
-      that.setData({  
-        ajaxdata: res
-      })
     })
-
   }
-
+  
 
 
 

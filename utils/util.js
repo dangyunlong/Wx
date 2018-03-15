@@ -14,17 +14,6 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
-//我添加的
-function cs() {
-  console.log("测试正常") 
-}
-
-function byajax(){
-  //http://blog.csdn.net/qq442270636/article/details/79274128
-}
-
 module.exports = {
   formatTime: formatTime,
-  cs: cs,
-  byajax: byajax,
 }
