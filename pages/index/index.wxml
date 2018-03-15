@@ -1,14 +1,49 @@
 <!--index.wxml-->
-<swiper indicator-dots="{{indicatorDots}}"  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">  
-  <block wx:for="{{imgUrls}}" style="width:100%" wx:key="imgUrls">  
-    <swiper-item class="banner">  
-        <image src="{{item}}" style="width:100%;height:100%"/>  
-    </swiper-item>  
-  </block>  
-</swiper> 
+<view class="scrollmenubox">
+  <scroll-view class="scrollbox" scroll-x="true" style="width:90%;float:left">
+    <view id="demo1" class="scrolllink" bindtap="gtpage" data-num="1">首页</view>
+    <view id="demo2" class="scrolllink" bindtap="gtpage" data-num="2">她帮新闻</view>
+    <view id="demo3" class="scrolllink" bindtap="gtpage" data-num="3">公司简介</view>
+    <view id="demo4" class="scrolllink" bindtap="gtpage" data-num="4">联系我们</view>
+    <view id="demo5" class="scrolllink" bindtap="gtpage" data-num="5">加盟她帮</view>
+  </scroll-view>
+  <view class="add">
+    <image src="{{add}}"></image>
+  </view>
+</view>
 
-<view class="menubox">
-  <block wx:for="{{menuIcon}}" wx:key="menuIcon">  
-     <view class="iconbox"><image src="{{item.img}}" style="width:43px; height:47.5px"></image>{{item.text}}</view>
-  </block>   
+<view wx:if="{{datanum==1}}">
+  <swiper indicator-dots="{{indicatorDots}}"  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}"> 
+    <block wx:for="{{imgUrls}}" wx:key="{{imgUrls}}" style="width:100%" wx:key="imgUrls">  
+      <swiper-item class="banner">  
+          <image src="{{item}}" style="width:100%;height:100%"/>  
+      </swiper-item>  
+    </block>  
+  </swiper> 
+  <view class="menubox">
+    <block wx:for="{{menuIcon}}" wx:key="menuIcon">  
+      <view class="iconbox"><image src="{{item.img}}" style="width:43px; height:47.5px"></image>{{item.text}}</view>
+    </block>   
+  </view>
+</view>
+
+<view wx:if="{{datanum==2}}">
+  <view>
+    <block wx:for="{{news}}"  wx:key="{{news}}">
+       <view class="newsbox">
+            <view class="floatleft"><image src="{{item.img}}"></image></view>
+            <view class="floatright">
+              <view class="newtitle">{{item.title}}</view>
+              <view class="newtext">{{item.text}}</view>
+            </view>
+       </view>
+    </block>
+  </view>
+</view>
+
+<view wx:if="{{datanum==3}}" class="contentbox">
+  <image src="{{contentimg}}"></image>
+  <view class="contenttitle">公司简介</view>
+  <view class="contenttext">美莱医疗美容诊所坐落于安徽省宿州市的步行街金茂商城和商务核心区域商之都对面，毗邻繁华商业街家乐福，占地四层，建筑面积1000多平米。</view>
+  <view class="contenttext">设有逆时光抗衰老中心，微整形面部立体精雕中心，胸型美化中心，形体雕塑中心，光学美肤中心，中医美容中心、专业医学美容美体养生馆等诊疗专区，提供超过300项医疗美容服务项目，以“国际、独立、时尚、唯美”的品牌特质，秉承“为美而生，因您而莱”的理念，赢得广大爱美人士的青睐。</view>
 </view>

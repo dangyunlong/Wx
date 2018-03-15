@@ -1,12 +1,17 @@
 //index.js
-//获取应用实例
+//获取公用js
+var tools = require("../../utils/util.js");
+var app = getApp();
 Page({
   data: {
-    bannersrc:"/images/banner/banner1.jpg",
+    datanum:"1",
+    add:"/images/photo/plus.png",
     imgUrls: [
       '/images/banner/banner1.jpg',
       '/images/banner/banner2.jpg',
     ],
+    ajaxdata:[],
+    contentimg:"/images/photo/content.jpg",
     indicatorDots: true, //  是否显示面板指示点
     autoplay: true, // 是否自动切换
     circular: true, // 是否采用衔接滑动
@@ -17,7 +22,12 @@ Page({
       {img:"/images/index/link1.png",text:"支持百家机构"},
       {img:"/images/index/link2.png",text:"1小时闪电到账"},
       {img:"/images/index/link3.png",text:"阶梯还款计划"}
-    ]
+    ],
+    news: [
+      { img: "/images/photo/new1.jpg", title: "感恩五月妈妈重回巅峰", text: "自1997年创立企业以来，刘芳女士始终坚持做好一件事——育人，努力将每一位有缘走进芳子的姑娘培养成有用的人才。2009年，师从..."},
+      { img: "/images/photo/new2.jpg", title: "法国细胞护肤专家", text: "药学博士、细胞生命学家Jean博士在1978年创建了雅诗敦首支晒黑防晒霜，奠定了这个品牌在防晒界的基石..."},
+      { img: "/images/photo/new3.jpg", title: "新手开美容院如何进行宣传？", text:"美容店效劳好不好是靠美容师的，技能宣扬本来即是对美容师的宣扬，经营者可以在美容店中专门拓荒一个宣扬台..." }
+    ],
   },
   changeIndicatorDots: function (e) {
     this.setData({
@@ -38,8 +48,26 @@ Page({
     this.setData({
       duration: e.detail.value
     })
-  }
+  },
+  gtpage:function(e){
+    var that=this;
+    var num = e.target.dataset.num;
+    //console.log(num)
+    that.setData({
+      datanum:num
+    })
+  },
+  onLoad() {
+    var that=this;
+    //tools.cs(); //外部引用的方法只能在onload的时候才能执行
+    tools.byajax("",function(res){
+      console.log(res)
+      that.setData({  
+        ajaxdata: res
+      })
+    })
 
+  }
 
 
 
