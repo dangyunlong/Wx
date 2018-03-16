@@ -1,4 +1,5 @@
-var rootDocment = "http://192.168.1.101:8080/";
+var app = getApp();
+var rootDocment = app.globalData.link; //从globalData全局对象中获取link属性
 //get
 function getReq(url, cb) {
   wx.showLoading({
