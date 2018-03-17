@@ -1,5 +1,6 @@
-var app = getApp();
-var rootDocment = app.globalData.link; //从globalData全局对象中获取link属性
+//var app = getApp(); //如果把http.js定义到全局 则无法在使用此方法
+//var rootDocment = app.globalData.link; //从globalData全局对象中获取link属性
+var rootDocment = "http://192.168.1.173:8080/";
 //get
 function getReq(url, cb) {
   wx.showLoading({

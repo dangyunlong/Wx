@@ -1,5 +1,5 @@
 //引用ajax
-var http = require("../../utils/http.js");
+//var http = require("../../utils/http.js");
 //index.js
 var app = getApp();
 Page({
@@ -56,7 +56,7 @@ Page({
   onLoad:function(){
     var that = this;
     //ajax
-    http.getReq("TabangWX/serv.php", function (res) {
+    app.func.getReq("TabangWX/serv.php", function (res) {
       //console.log("banner==")
       //console.log(res)
       that.setData({
