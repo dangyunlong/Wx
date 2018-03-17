@@ -1,9 +1,5 @@
-var app = getApp()
 Page({
   data: {
-    /** 
-    * 页面配置 
-    */
     winWidth: 0,
     winHeight: 0,
     // tab切换  
@@ -25,13 +21,12 @@ Page({
       { allmoney: "2,000.00", time: "2017-12-12 13:14", img: "/images/state/state1.png", money: "2,000.00", mmoney: "1,000.00", num: "12" },
       { allmoney: "3,300.00", time: "2017-12-09 13:40", img: "/images/state/state1.png", money: "900.00", mmoney: "900.00", num: "3" },
     ]
-
   },
   add:function(){
+    //下拉显示更多
     var that = this;
     var num=this.data.listnum+4;
     this.data.listmax = this.data.listdata.length;
-
     if (this.data.listnum >= this.data.listmax){
       return false
     }else{
@@ -39,13 +34,10 @@ Page({
         listnum: num
       });
     }
-
   },
   onLoad: function () {
     var that = this;
-    /** 
-     * 获取系统信息 
-     */
+    /*获取系统信息 计算swiper宽高*/
     wx.getSystemInfo({
       success: function (res) {
         that.setData({
@@ -53,19 +45,14 @@ Page({
           winHeight: res.windowHeight
         });
       }
-
     });
   },
-  /** 
-     * 滑动切换tab 
-     */
+  /*滑动切换tab*/
   bindChange: function (e) {
     var that = this;
     that.setData({ currentTab: e.detail.current });
   },
-  /** 
-   * 点击tab切换 
-   */
+  /*点击tab切换*/
   swichNav: function (e) {
     var that = this;
     if (this.data.currentTab === e.target.dataset.current) {
@@ -76,8 +63,4 @@ Page({
       })
     }
   }
-
-
-
-
 })  

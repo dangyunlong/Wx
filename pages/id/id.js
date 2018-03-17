@@ -7,7 +7,6 @@ Page({
     sendMoreMsgFlag:false,  // 控制是否显示图片控制面板
     chooseFiles:[], //上传获得的是一组图片
     delid:"", //要删除图片的id
-
     //弹出菜单
     actionSheetHidden: true,
     actionSheetItems: [
@@ -76,7 +75,6 @@ Page({
     var imgArr = this.data.chooseFiles;
     var that = this;
     var current = this.data.delid; //获得要编辑的id
-
     //console.log(newimg);
     wx.chooseImage({
       count: 1, // 动态数量
@@ -89,12 +87,10 @@ Page({
         })
       }
     })
-
     //关闭菜单
     this.setData({
       actionSheetHidden: !this.data.actionSheetHidden
     })
-    
   },
   //删除
   bindMenu2: function (e) {
@@ -110,6 +106,5 @@ Page({
     this.setData({
        actionSheetHidden: !this.data.actionSheetHidden
     })
-
   }
 })
