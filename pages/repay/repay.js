@@ -25,15 +25,21 @@ Page({
   add:function(){
     //下拉显示更多
     var that = this;
-    var num=this.data.listnum+4;
+    var num = this.data.listnum + 4;
     this.data.listmax = this.data.listdata.length;
-    if (this.data.listnum >= this.data.listmax){
-      return false
-    }else{
-      that.setData({
-        listnum: num
-      });
-    }
+    //进入下拉刷新
+    wx.startPullDownRefresh();
+    setTimeout(function () {
+      if (that.data.listnum >= that.data.listmax) {
+        return false
+      } else {
+        that.setData({
+          listnum: num
+        });
+      }
+      wx.hideNavigationBarLoading() //完成停止加载
+      wx.stopPullDownRefresh() //停止下拉刷新
+    }, 1500);
   },
   onLoad: function () {
     var that = this;
@@ -62,5 +68,15 @@ Page({
         currentTab: e.target.dataset.current
       })
     }
-  }
+  },
+  /*下拉刷新*/
+  // onPullDownRefresh: function () {
+  //   wx.showNavigationBarLoading() //在标题栏中显示加载
+  //   //模拟加载
+  //   setTimeout(function () {
+  //     // complete
+  //     wx.hideNavigationBarLoading() //完成停止加载
+  //     wx.stopPullDownRefresh() //停止下拉刷新
+  //   }, 1500);
+  // },
 })  
