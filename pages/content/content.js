@@ -17,7 +17,7 @@ Page({
     console.log(myget)
     var data = this.data.getdata
     //获取到参数以后再执行ajax即可。
-    app.func.getReq("TabangWX/serv.php", myget, function (res) {
+    app.func.getReq("serv/serv.php", myget, function (res) {
       that.setData({
         datas: res
       })

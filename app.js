@@ -37,7 +37,6 @@ App({
   },
   globalData: {
     userInfo: null,
-    //link: "http://192.168.1.173:8080/"
   },
   func: {
     getReq: http.getReq,
