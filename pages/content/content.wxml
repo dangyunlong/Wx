@@ -1,0 +1,8 @@
+<!--pages/content/content.wxml-->
+<view>
+  <block wx:for="{{datas}}" wx:key="{{datas}}">
+    <view class="newstitle">{{item.title}}</view>
+    <view class="newsimg"><image src="{{item.img}}"></image></view>
+    <view class="newtext">{{item.text}}</view>
+  </block>
+</view>

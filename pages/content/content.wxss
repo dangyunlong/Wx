@@ -1,0 +1,19 @@
+/* pages/bill/bill.wxss */
+page {
+  background: #f2f2f2;
+}
+.newstitle {
+  font-size: 34rpx;
+  border-bottom:1px solid #ccc;
+  color: #333;
+  padding: 20rpx;
+}
+.newtext {
+  font-size: 28rpx;
+  color: #999;
+  padding: 20rpx;
+}
+.newsimg image {
+  width: 100%;
+  height: 260rpx;
+}

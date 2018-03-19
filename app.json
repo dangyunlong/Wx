@@ -3,7 +3,9 @@
     "pages/index/index",
     "pages/id/id",
     "pages/bill/bill",
-    "pages/repay/repay"
+    "pages/repay/repay",
+    "pages/content/content",
+    "pages/register/register"
   ],
   "window":{
     "backgroundTextStyle":"light",

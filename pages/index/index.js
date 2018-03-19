@@ -11,6 +11,7 @@ Page({
       '/images/banner/banner2.jpg',
     ],
     ajaxdata:[],
+    //swiper
     contentimg:"/images/photo/content.jpg",
     indicatorDots: true, //  是否显示面板指示点
     autoplay: true, // 是否自动切换
@@ -23,6 +24,7 @@ Page({
       {img:"/images/index/link2.png",text:"1小时闪电到账"},
       {img:"/images/index/link3.png",text:"阶梯还款计划"}
     ],
+    //新闻
     news: [],
   },
   changeIndicatorDots: function (e) {
@@ -52,11 +54,17 @@ Page({
     that.setData({
       datanum:num
     })
+    if (num==5){
+      wx.navigateTo({
+        url: '../register/register',
+      })
+    }
   },
   onLoad:function(){
     var that = this;
-    //ajax
-    app.func.getReq("TabangWX/serv.php", function (res) {
+    var data = {"num":"1"}
+    //获取首页新闻
+    app.func.getReq("TabangWX/serv.php",data,function (res) {
       //console.log("banner==")
       //console.log(res)
       that.setData({

@@ -2,13 +2,14 @@
 //var rootDocment = app.globalData.link; //从globalData全局对象中获取link属性
 var rootDocment = "http://192.168.1.173:8080/";
 //get
-function getReq(url, cb) {
+function getReq(url,data,cb) {
   wx.showLoading({
     title: "加载中",
   })
   wx.request({
     url: rootDocment + url,
     method: "get",
+    data: data,
     success: function (res) {
       wx.hideLoading();
       return typeof cb == "function" && cb(res.data)

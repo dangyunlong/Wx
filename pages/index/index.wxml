@@ -31,11 +31,13 @@
   <view>
     <block wx:for="{{news}}"  wx:key="{{news}}">
        <view class="newsbox">
-            <view class="floatleft"><image src="{{item.img}}"></image></view>
-            <view class="floatright">
-              <view class="newtitle">{{item.title}}</view>
-              <view class="newtext">{{item.text}}</view>
-            </view>
+            <navigator url="../content/content?num=1&pages={{item.id}}">
+              <view class="floatleft"><image src="{{item.img}}"></image></view>
+              <view class="floatright">
+                <view class="newtitle">{{item.title}}</view>
+                <view class="newtext">{{item.text}}</view>
+              </view>
+            </navigator>
        </view>
     </block>
   </view>

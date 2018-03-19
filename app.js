@@ -1,6 +1,7 @@
 //app.js
 //var app = getApp();
-var http = require("utils/http.js");  
+var http = require("utils/http.js");
+
 App({
   onLaunch: function () {
     //console.log(http);
