@@ -46,7 +46,7 @@ function getReq(url, data, cb) {
   })
 }
 
-// 去前后空格
+// 去前后空格  验证账号不能是全空格 
 function trim(str) {
   return str.replace(/(^\s*)|(\s*$)/g, "");
 }

@@ -11,11 +11,16 @@ password ：密码
 subPassword ：确认密码
 -->
 <view class="page__bd">
+  <!--错误信息start-->
   <view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">{{errorMsg}}</view>
+  <!--错误信息end-->
+  <!--放置全局背景-->
   <view style="height: {{windowHeight}}px; width: {{windowWidth}}px;" class="back_img">
   </view>
-  <view style="position:absolute;top:{{windowHeight * 0.06}}px;">
-    <image src="../../images/state/bg.jpg" style="width: {{windowWidth * 0.4}}px;height:{{windowWidth * 0.4}}px; margin-left:{{windowWidth * 0.5 - 80}}px;border-radius:{{windowWidth * 0.2}}px;"></image>
+
+
+  <view style="position:absolute;top:{{windowHeight * 0.06}}px; width:100%; text-align:center">
+    <image src="../../images/state/bg.jpg" class="iconimg"></image>
   </view>
   <form bindsubmit="formSubmit" bindreset="formReset">
     <view class="login_info" style="top:{{windowHeight * 0.35}}px;width: {{windowWidth * 0.92}}px;">
