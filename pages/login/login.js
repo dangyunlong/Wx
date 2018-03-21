@@ -12,6 +12,9 @@ Page({
     showTopTips: false, //显示错误信息
     errorMsg: "",
     eject:{},//动画变量
+    src1:"../../images/state/bg.jpg",
+    src2:"../../images/state/bg2.jpg",
+    src3:"../../images/state/bg3.jpg",
   },
   onLoad: function () {
     var that = this;
@@ -24,6 +27,12 @@ Page({
         })
       }
     });
+
+    //更新授权登陆状态
+    this.setData({
+      hasLogin: app.globalData.hasLogin
+    })
+
   },
   //验证开始
   formSubmit: function (e) {
@@ -48,7 +57,7 @@ Page({
       //判断一下账号是否被注册过
       app.func.getReq("serv/serv.php", {"getid": account}, function (res) {
         if (!res) {
-          util.isError("账号已经被注册过", that);
+          util.isError("账号未注册", that);
           return;
         }
       })
@@ -65,42 +74,19 @@ Page({
     } else {
       util.clearError(that);
     }
-    // 两个密码必须一致
-    if (subPassword != password) {
-      //弹出消息
-      animation.height(20).step();
-      that.setData({
-        eject: animation.export()
-      })
-      util.isError("输入密码不一致", that);
-      return;
-    } else {
-      util.clearError(that);
-    }
     // 验证都通过了执行注册方法
     app.func.getReq("serv/serv.php", { "getid": account, "getps": password}, function (res) {
       console.log(res)
       if (res == true) {
         // 显示模态弹窗
-        wx.showModal({
-          title: '注册成功',
-          content: '注册成功，请点击确定登录吧',
+        wx.showToast({
+          title: '',
+          content: '',
           success: function (res) {
-            if (res.confirm) {
-              console.log("注册成功")
-              // 点击确定后跳转登录页面并关闭当前页面
-              // 带着账号密码跳转
-              // wx.redirectTo({
-              //   url: '../login/login?account=' + account + '&password?=' + password + ''
-              // })
-              wx.redirectTo({url:'../login/login'})
-            }else{
-              //收回弹出框
-              animation.height(0).step();
-              that.setData({
-                eject: animation.export()
-              })
-            }
+            animation.height(0).step();
+            that.setData({
+              eject: animation.export()
+            })
           }
         })
       } else {
@@ -112,5 +98,28 @@ Page({
         })
       }
     })
+  },
+  //微信登陆
+  login: function () {
+    var that = this
+    wx.login({
+      success: function (res) {
+        app.globalData.hasLogin = true
+        that.setData({
+          hasLogin: true
+        })
+      }
+    })
+  },
+  gohome:function(){
+    wx.switchTab({
+      url:"../index/index",
+      success: function (e) {
+        var page = getCurrentPages().pop();
+        if (page == undefined || page == null) return;
+        page.onLoad();
+      } 
+    })
   }
+  
 })

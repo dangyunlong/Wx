@@ -124,3 +124,16 @@
   text-indent: 2em;
   margin-bottom: 20rpx;
 }
+
+.islogin {
+  font-size: 28rpx;
+  color: #999;
+  height:28rpx;
+  background: #fff;
+  margin-top: 10rpx;
+  text-align: center;
+  padding-bottom: 40rpx;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}

@@ -37,6 +37,8 @@ App({
   },
   globalData: {
     userInfo: null,
+    hasLogin: false,
+    openid: null
   },
   func: {
     getReq: http.getReq,

@@ -79,3 +79,23 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
  /* Internet Explorer 10+ */   
 color: #666;   
 } 
+.weuiline-img {
+  font-size: 28rpx;
+  height:70rpx;
+  margin-bottom: 20rpx;
+  color:#666;
+}
+.weuiline-img image{
+  width:60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  margin-right: 10rpx;
+  margin-top: 10rpx;
+}
+.loginstate {
+  position: absolute;
+  top:300rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #999;
+}

@@ -68,5 +68,10 @@ Page({
         news: res
       })
     })
+
+    //更新授权登陆状态
+    this.setData({
+      hasLogin: app.globalData.hasLogin
+    })
   }
 })

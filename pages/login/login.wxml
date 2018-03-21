@@ -21,22 +21,30 @@ subPassword ：确认密码
     <image src="../../images/state/bg.jpg" class="iconimg"></image>
   </view>
   <!--form开始-->
-  <form bindsubmit="formSubmit" bindreset="formReset">
+  <form bindsubmit="formSubmit" bindreset="formReset" wx:if="{{hasLogin === false}}">
     <view class="login_info" style="top:{{windowHeight*0.25}}px;width:{{windowWidth*0.92}}px;">
       <view class="login_form">
         <view class="weui-label">账号</view>
-        <input class="weui-input" placeholder="请输入账号" type="text" maxlength="20" value="{{account}}" focus="true" name="account"/>
+        <input class="weui-input" placeholder="请输入登陆账号" type="text" maxlength="20" value="{{account}}" focus="true" name="account"/>
         <view class="weui-label">密码</view>
-        <input class="weui-input" placeholder="请输入密码" type="password" maxlength="10" value="{{password}}" name="password"/>
-        <view class="weui-label">确认密码</view>
-        <input class="weui-input" placeholder="请输入确认密码" type="password" maxlength="10" value="{{subPassword}}" name="subPassword"/>
-        <!--进入登陆部分-->
-        <view class="weuiline">已有账号，<navigator url="/pages/login/login">登陆</navigator></view>
-
+        <input class="weui-input" placeholder="请输入登陆密码" type="password" maxlength="10" value="{{password}}" name="password"/>
+        <view class="weui-label">授权登陆</view>
+        <view class="weuiline-img">
+          <image src="{{src1}}" bindtap="login"></image>
+          <image src="{{src2}}"></image>
+          <image src="{{src3}}"></image>
+        </view>
         <view class="weui-btn-area">
-          <button class="weui-btn" type="primary" formType="submit">注册</button>
+          <button class="weui-btn" type="primary" formType="submit">登陆</button>
         </view>
       </view>
     </view>
   </form>
+ 
+  <view wx:if="{{hasLogin === true}}" class="loginstate">
+    <view bindtap="gohome">您已经登陆</view>
+    <view>每个微信号中仅需登录 1 次，后续每次进入页面即可根据微信 id 自动拉取用户信息</view>
+  </view>
+
+
 </view>

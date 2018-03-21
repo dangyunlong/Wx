@@ -25,6 +25,8 @@
       <view class="iconbox"><image src="{{item.img}}" style="width:43px; height:47.5px"></image>{{item.text}}</view>
     </block>   
   </view>
+  <view class="islogin" wx:if="{{hasLogin === false}}">您未登陆，部分内容无权查看。</view>
+  <view class="islogin" wx:if="{{hasLogin === true}}">您已登陆，现在可以查看所有内容了。</view>
 </view>
 
 <view wx:if="{{datanum==2}}">
@@ -49,3 +51,5 @@
   <view class="contenttext">美莱医疗美容诊所坐落于安徽省宿州市的步行街金茂商城和商务核心区域商之都对面，毗邻繁华商业街家乐福，占地四层，建筑面积1000多平米。</view>
   <view class="contenttext">设有逆时光抗衰老中心，微整形面部立体精雕中心，胸型美化中心，形体雕塑中心，光学美肤中心，中医美容中心、专业医学美容美体养生馆等诊疗专区，提供超过300项医疗美容服务项目，以“国际、独立、时尚、唯美”的品牌特质，秉承“为美而生，因您而莱”的理念，赢得广大爱美人士的青睐。</view>
 </view>
+
+
