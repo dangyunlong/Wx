@@ -1,6 +1,13 @@
 var util = require('../../utils/util.js');
 var app = getApp();
 
+//配置动画规则
+var animation = wx.createAnimation({
+  duration: 1000,
+  timingFunction: 'ease',
+  delay: 100,
+});
+
 Page({
   data: {
     showTopTips: false, //显示错误信息
@@ -18,17 +25,7 @@ Page({
         })
       }
     });
-
-    
-
-
-    
   },
- 
-
-
-
-
   //验证开始
   formSubmit: function (e) {
     // form 表单取值，格式 e.detail.value.name(name为input中自定义name值) ；
@@ -39,22 +36,12 @@ Page({
     var that = this;
     // 判断账号是否为空和判断该账号名是否被注册
     if ("" == util.trim(account)) {
-
-
-      //创建一段动画
-      var animation = wx.createAnimation({
-        transformOrigin: "50% 50%", //位置
-        duration: 500, // 默认为400 动画持续时间，单位ms
-        timingFunction: 'ease', //动画方式
-        delay: 1000 //延迟
-      });
-      this.animation = animation;
-      animation.top(300).step();
+      //弹出消息
+      animation.height(20).step();
       that.setData({
         eject: animation.export()
       })
-
-
+      //错误消息
       util.isError("账号不能为空", that);
       return;
     } else {
@@ -69,6 +56,11 @@ Page({
     }
     // 判断密码是否为空
     if ("" == util.trim(password)) {
+      //弹出消息
+      animation.height(20).step();
+      that.setData({
+        eject: animation.export()
+      })
       util.isError("密码不能为空", that);
       return;
     } else {
@@ -76,6 +68,11 @@ Page({
     }
     // 两个密码必须一致
     if (subPassword != password) {
+      //弹出消息
+      animation.height(20).step();
+      that.setData({
+        eject: animation.export()
+      })
       util.isError("输入密码不一致", that);
       return;
     } else {
@@ -97,6 +94,12 @@ Page({
               // wx.redirectTo({
               //   url: '../login/login?account=' + account + '&password?=' + password + ''
               // })
+            }else{
+              //收回弹出框
+              animation.height(0).step();
+              that.setData({
+                eject: animation.export()
+              })
             }
           }
         })

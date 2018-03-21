@@ -25,7 +25,7 @@ function trim(str) {
 // 提示错误信息
 function isError(msg, that) {
   that.setData({
-    showTopTips: true,
+    //showTopTips: true, //我改为用动画的方式 暂时不用wx:if的形式
     errorMsg: msg
   })
 }
@@ -33,7 +33,7 @@ function isError(msg, that) {
 // 清空错误信息
 function clearError(that) {
   that.setData({
-    showTopTips: false,
+    //showTopTips: false,
     errorMsg: ""
   })
 }

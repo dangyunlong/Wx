@@ -11,8 +11,8 @@ password ：密码
 subPassword ：确认密码
 -->
 <view class="page__bd">
-  <!--错误信息start-->
-  <view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}" animation="{{eject}}">{{errorMsg}}</view>
+  <!--错误信息start  wx:if="{{showTopTips}}"  -->
+  <view class="weui-toptips weui-toptips_warn" animation="{{eject}}">{{errorMsg}}</view>
   <!--错误信息end-->
   <!--放置全局背景-->
   <view style="height: {{windowHeight}}px; width: {{windowWidth}}px;" class="back_img">
