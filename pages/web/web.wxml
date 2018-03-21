@@ -1,0 +1,2 @@
+<!--pages/web/web.wxml-->
+<web-view src="http://192.168.1.173:8080/TabangWX/ticationName.html"></web-view>

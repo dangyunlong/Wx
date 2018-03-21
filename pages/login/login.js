@@ -101,6 +101,7 @@ Page({
   },
   //微信登陆
   login: function () {
+    //登录
     var that = this
     wx.login({
       success: function (res) {
@@ -110,6 +111,19 @@ Page({
         })
       }
     })
+  
+    //获取用户信息
+    wx.getUserInfo({
+      success: function (res) {
+        console.log(res.userInfo);
+        that.setData({
+          hasUserInfo: true,
+          userInfo: res.userInfo
+        })
+      }
+    })
+
+
   },
   gohome:function(){
     wx.switchTab({

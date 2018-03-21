@@ -6,7 +6,8 @@
     "pages/repay/repay",
     "pages/content/content",
     "pages/register/register",
-    "pages/login/login"
+    "pages/login/login",
+    "pages/web/web"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -22,7 +23,7 @@
       "selectedIconPath": "images/nav/home.png"
     },
     {
-      "pagePath": "pages/id/id",
+      "pagePath": "pages/web/web",
       "text": "实名认证",
       "iconPath": "images/nav/idDefault.png",
       "selectedIconPath": "images/nav/id.png"
