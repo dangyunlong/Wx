@@ -109,21 +109,24 @@ Page({
         that.setData({
           hasLogin: true
         })
-      }
-    })
-  
-    //获取用户信息
-    wx.getUserInfo({
-      success: function (res) {
-        console.log(res.userInfo);
-        that.setData({
-          hasUserInfo: true,
-          userInfo: res.userInfo
+
+        //获取用户信息
+        wx.getUserInfo({
+          success: function (res) {
+            console.log(res.userInfo);
+            that.setData({
+              hasUserInfo: true,
+              userInfo: res.userInfo
+            })
+            console.log("权限获取成功");
+          },
+          fail: function () {
+            console.log("重新获取权限");
+            wx.openSetting({}) //如果用户之前拒绝过 可以打开设置让他重新获取
+          }
         })
       }
     })
-
-
   },
   gohome:function(){
     wx.switchTab({
