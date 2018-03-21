@@ -63,12 +63,10 @@ Page({
     var data = {"num":"1"}
     //获取首页新闻
     app.func.getReq("serv/serv.php",data,function (res) {
-      //console.log("banner==")
       //console.log(res)
       that.setData({
         news: res
       })
-      console.log(that.data.news)
     })
   }
 })

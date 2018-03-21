@@ -1,7 +1,6 @@
 page {  
   background-color: #f2f2f2;
 }  
-
 .back_img{
   /* background: url(https://thumbnail0.baidupcs.com/thumbnail/bef784a21af03b22596d9be60277c97d?fid=2250609515-250528-852790904040114&time=1521450000&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-JhSVggdH1gRSCqSzB1a7d%2BHPc0g%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=1802377474373829599&dp-callid=0&size=c710_u400&quality=100&vuk=-&ft=video) no-repeat; */
   background-size:cover;
@@ -21,7 +20,6 @@ page {
   margin-left:8%;
   background-color: rgba(255,255,255,0.2);
 }
-
 .iconimg {
   margin:0 auto;
   width: 80px;
@@ -30,5 +28,45 @@ page {
 }
 .weui-label {
   font-size: 36rpx;
-  color:#333
+  color:#333;
 }
+.weui-input {
+  font-size: 28rpx;
+  border-radius: 5px;
+  border:1px solid #ccc;
+  padding:10rpx;
+  margin-top: 10rpx;
+  margin-bottom:10rpx;
+  background: #fff;
+}
+.weui-btn-area {
+  margin-top:30rpx
+}
+.weui-toptips {
+  font-size: 30rpx;
+  color: #999;
+  background: #fff;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {   
+ /* WebKit browsers */   
+color: #666;   
+}   
+input:-moz-placeholder, textarea:-moz-placeholder {   
+/* Mozilla Firefox 4 to 18 */   
+color: #666;   
+}   
+input::-moz-placeholder, textarea::-moz-placeholder {   
+ /* Mozilla Firefox 19+ */   
+color: #666;   
+}   
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {   
+ /* Internet Explorer 10+ */   
+color: #666;   
+} 

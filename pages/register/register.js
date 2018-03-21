@@ -4,7 +4,8 @@ var app = getApp();
 Page({
   data: {
     showTopTips: false, //显示错误信息
-    errorMsg: ""
+    errorMsg: "",
+    eject:{},//动画变量
   },
   onLoad: function () {
     var that = this;
@@ -17,7 +18,17 @@ Page({
         })
       }
     });
+
+    
+
+
+    
   },
+ 
+
+
+
+
   //验证开始
   formSubmit: function (e) {
     // form 表单取值，格式 e.detail.value.name(name为input中自定义name值) ；
@@ -28,6 +39,22 @@ Page({
     var that = this;
     // 判断账号是否为空和判断该账号名是否被注册
     if ("" == util.trim(account)) {
+
+
+      //创建一段动画
+      var animation = wx.createAnimation({
+        transformOrigin: "50% 50%", //位置
+        duration: 500, // 默认为400 动画持续时间，单位ms
+        timingFunction: 'ease', //动画方式
+        delay: 1000 //延迟
+      });
+      this.animation = animation;
+      animation.top(300).step();
+      that.setData({
+        eject: animation.export()
+      })
+
+
       util.isError("账号不能为空", that);
       return;
     } else {
@@ -81,8 +108,11 @@ Page({
           duration: 2000
         })
       }
-
     })
-
   }
+
+
+
+
+
 })

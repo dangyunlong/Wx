@@ -1,3 +1,4 @@
+//转换为时间
 function formatTime(date) {
   var year = date.getFullYear()
   var month = date.getMonth() + 1
@@ -10,40 +11,10 @@ function formatTime(date) {
   return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
 }
 
+//转化为数字
 function formatNumber(n) {
   n = n.toString()
   return n[1] ? n : '0' + n
-}
-
-var rootDocment = 'https://www.itit123.cn';
-function req(url, data, cb) {
-  wx.request({
-    url: rootDocment + url,
-    data: data,
-    method: 'post',
-    header: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    success: function (res) {
-      return typeof cb == "function" && cb(res.data)
-    },
-    fail: function () {
-      return typeof cb == "function" && cb(false)
-    }
-  })
-}
-
-function getReq(url, data, cb) {
-  wx.request({
-    url: rootDocment + url,
-    data: data,
-    method: 'get',
-    header: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    success: function (res) {
-      return typeof cb == "function" && cb(res.data)
-    },
-    fail: function () {
-      return typeof cb == "function" && cb(false)
-    }
-  })
 }
 
 // 去前后空格  验证账号不能是全空格 
@@ -69,9 +40,7 @@ function clearError(that) {
 
 module.exports = {
   formatTime: formatTime,
-  req: req,
   trim: trim,
   isError: isError,
   clearError: clearError,
-  getReq: getReq
 }
