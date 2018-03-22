@@ -37,9 +37,9 @@ function clearError(that) {
     errorMsg: ""
   })
 }
-
+var allImg="";
 //多张图片上传
-function uploadimg(data) {
+function uploadimg(data,cb) {
   var that = this,
   i = data.i ? data.i : 0,//当前上传的哪张图片
   success = data.success ? data.success : 0,//上传成功的个数
@@ -54,6 +54,7 @@ function uploadimg(data) {
       console.log(resp)
       console.log(i);
       //这里可能有BUG，失败也会执行这里,所以这里应该是后台返回过来的状态码为成功时，这里的success才+1
+      allImg += resp.data+",";
     },
     fail: (res) => {
       fail++;//图片上传失败，图片上传失败的变量+1
@@ -65,6 +66,8 @@ function uploadimg(data) {
       if (i == data.path.length) {   //当图片传完时，停止调用          
         console.log('执行完毕');
         console.log('成功：' + success + " 失败：" + fail);
+        //console.log(allImg) //拼成字符串
+        return typeof cb == "function" && cb(allImg)
       } else {//若图片还没有传完，则继续调用函数
         console.log(i);
         data.i = i;
@@ -72,7 +75,6 @@ function uploadimg(data) {
         data.fail = fail;
         that.uploadimg(data);
       }
-
     }
   });
 }

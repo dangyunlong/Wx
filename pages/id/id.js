@@ -16,6 +16,7 @@ Page({
       { bindtap: 'Menu2', txt: '删除' }
     ],
     menu:'',
+    text:""
   },
   //上传图片
   chooseImage: function (enent){
@@ -109,14 +110,29 @@ Page({
     this.setData({
        actionSheetHidden: !this.data.actionSheetHidden
     })
+  },//获取输入框的值
+  postval:function(e){
+      this.setData({
+        text: e.detail.value
+      })
   },
   //多张上传
   gofrom:function(e){
+    var that=this;
     //获取上传图片的数据
     var imgArr = this.data.chooseFiles;
     util.uploadimg({
-      url: "http://192.168.2.109:8080/serv/upload.php",//这里是你图片上传的接口
+      url: "http://192.168.1.102:8080/serv/upload.php",//这里是你图片上传的接口
       path: imgArr//这里是选取的图片的地址数组
-    });
+    },function(data){
+      console.log(data)
+      var text = that.data.text;
+      app.func.getReq("serv/serv.php", { "txt": text,"imgs": data}, function (res) {
+          //console.log(res)
+      })
+    })
+
+
+
   }
 })
