@@ -23,7 +23,7 @@
       "selectedIconPath": "images/nav/home.png"
     },
     {
-      "pagePath": "pages/web/web",
+      "pagePath": "pages/id/id",
       "text": "实名认证",
       "iconPath": "images/nav/idDefault.png",
       "selectedIconPath": "images/nav/id.png"

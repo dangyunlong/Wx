@@ -1,4 +1,6 @@
 var app = getApp();
+var util = require("../../utils/util.js");
+
 Page({
   data: {
     img:"/images/photo/plus.png",
@@ -17,6 +19,7 @@ Page({
   },
   //上传图片
   chooseImage: function (enent){
+   
     //先获取要上传的图片组
     var imgArr=this.data.chooseFiles;
     //进行最大不超过3张的判断
@@ -106,5 +109,14 @@ Page({
     this.setData({
        actionSheetHidden: !this.data.actionSheetHidden
     })
+  },
+  //多张上传
+  gofrom:function(e){
+    //获取上传图片的数据
+    var imgArr = this.data.chooseFiles;
+    util.uploadimg({
+      url: "http://192.168.2.109:8080/serv/upload.php",//这里是你图片上传的接口
+      path: imgArr//这里是选取的图片的地址数组
+    });
   }
 })

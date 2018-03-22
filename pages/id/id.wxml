@@ -3,8 +3,14 @@
   <view class="idline">填写真实身份信息有助于您快速通过审核</view>
   <view class="idline">拍摄时请保持身份证边框完整、字迹清晰、亮度均衡</view>
 </view>
+
 <view class="upimgbox">
-  <view class="imgtitle">上传身份证</view>
+  <view class="imgtitle">评论内容</view>
+  <textarea class="imgtitle"></textarea>
+</view>
+
+<view class="upimgbox2">
+  <view class="imgtitle">图片</view>
   <view class="imgbox">
     <view class="add" bindtap="chooseImage"><image src="{{img}}"></image></view>
     <block wx:for="{{chooseFiles}}" wx:for-item="image" wx:key="image">
@@ -14,9 +20,13 @@
     </block>
   </view>
 </view>
+<!--选择照片弹出菜单-->
 <action-sheet hidden="{{actionSheetHidden}}" bindchange="actionSheetbindchange">
     <block wx:for-items="{{actionSheetItems}}"  wx:key="actionSheetItems">
         <action-sheet-item bindtap="bind{{item.bindtap}}">{{item.txt}}</action-sheet-item>
     </block>
     <action-sheet-cancel class="cancel">取消</action-sheet-cancel>
 </action-sheet>
+
+<!--确定提交-->
+<button class="gofrom" bindtap="gofrom">提交到风控系统</button>
