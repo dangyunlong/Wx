@@ -44,5 +44,15 @@ App({
   func: {
     getReq: http.getReq,
     postReq: http.postReq,
+  }, //场景值
+  onShow: function (options) {
+    //console.log("Path: " + options.path)
+    //console.log("Path: " + options.query)
+    //console.log("Path: " + options.scene)
+    if (options.scene==1005){
+      wx.navigateTo({
+        url: '../login/login',
+      })
+    }
   }
 })

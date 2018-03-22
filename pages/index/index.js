@@ -83,6 +83,12 @@ Page({
       userInfo: app.globalData.userInfo, 
       hasUserInfo: app.globalData.hasUserInfo
     })
-
+  },//分享功能
+  onShareAppMessage: function () {
+    return {
+      title: '她帮分期-美丽零距离，分期无压力',
+      desc: '中国最具实力的美容分期理财类产品!',
+      path: '/login/login'
+    }
   }
 })
