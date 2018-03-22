@@ -107,24 +107,30 @@ Page({
       success: function (res) {
         app.globalData.hasLogin = true
         that.setData({
-          hasLogin: true
+          hasLogin: true,
         })
 
         //获取用户信息
         wx.getUserInfo({
           success: function (res) {
-            console.log(res.userInfo);
+            //需要先注入数据然后再渲染 大坑
+            app.globalData.userInfo = res.userInfo;
+            app.globalData.hasUserInfo = true;
+
             that.setData({
-              hasUserInfo: true,
+              hasUserInfo:true,
               userInfo: res.userInfo
             })
             console.log("权限获取成功");
+            console.log(app.globalData.userInfo)
           },
           fail: function () {
             console.log("重新获取权限");
             wx.openSetting({}) //如果用户之前拒绝过 可以打开设置让他重新获取
           }
         })
+
+
       }
     })
   },

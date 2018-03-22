@@ -73,5 +73,16 @@ Page({
     this.setData({
       hasLogin: app.globalData.hasLogin
     })
+    
+    //var userInfo = app.globalData.userInfo;
+    //var hasUserInfo = app.globalData.hasUserInfo;
+
+    //console.log(hasUserInfo)
+    //更新获取用户状态
+    this.setData({
+      userInfo: app.globalData.userInfo, 
+      hasUserInfo: app.globalData.hasUserInfo
+    })
+
   }
 })

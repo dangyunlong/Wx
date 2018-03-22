@@ -28,13 +28,12 @@
   <view class="islogin" wx:if="{{hasLogin === false}}">您未登陆，部分内容无权查看。</view>
   <view class="islogin" wx:if="{{hasLogin === true}}">您已登陆，现在可以查看所有内容了。</view>
 
-  <view wx:if="{{hasUserInfo === true}}">
+  <!--获取用户信息-->
+  <view wx:if="{{hasUserInfo === false}}" class="userbox">登陆后可见您的详细信息</view>
+  <view wx:if="{{hasUserInfo === true}}" class="userbox">
     <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}"></image>
     <text class="userinfo-nickname">{{userInfo.nickName}}</text>
   </view>
-
-
-
 
 </view>
 
