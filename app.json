@@ -7,7 +7,8 @@
     "pages/content/content",
     "pages/register/register",
     "pages/login/login",
-    "pages/web/web"
+    "pages/web/web",
+    "pages/photo/photo"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -29,8 +30,8 @@
       "selectedIconPath": "images/nav/id.png"
     },
     {
-      "pagePath": "pages/bill/bill",
-      "text": "申请分期",
+      "pagePath": "pages/photo/photo",
+      "text": "图片裁切",
       "iconPath": "images/nav/billDefault.png",
       "selectedIconPath": "images/nav/bill.png"
     },
